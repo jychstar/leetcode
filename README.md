@@ -51,12 +51,10 @@ public:
 };
 ```
 
-If the header is not included, c++ code actually has the similar lines of codes as python, but is way faster (9ms vs 62ms). When hardware doesn't have unlimited speed, a significant boost from algorithm is worth the effort. 
+If the header is not included, c++ code actually has the **similar lines of codes** as python, but is **way faster (9ms vs 62ms)**. When hardware doesn't have unlimited speed, a significant boost from language/algorithm is worth the effort. 
 
 ## resources:
 
 1. leetcode 151 solutions by category: https://github.com/soulmachine/leetcode
 2. leetcode 468 solutions with comlexity list: https://github.com/kamyu104/LeetCode
 3. leetcode c++ solutions: https://github.com/haoel/leetcode
-
-# leetcode
