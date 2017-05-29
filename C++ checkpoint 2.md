@@ -9,6 +9,12 @@ notes:
 - it's recommend to use vector not array ( no matter c style or std::array) because array is error-prone.  
 - use `size()` to to get size of a std::vector or std:array object. For c style array, there are 2 ways:   `sizeof(list) / sizeof(list[0])` or distance(begin(list),end(list))
 - for std::vector, you can `push_back(value)` or `insert(iterator,value)` and  `erase(iterator)` 
+- constructor. `array<int,3> a={1,2,3};`
+- constructor.  `vector<int> v(5,0)`;
+
+## char vs string
+
+- char is single quote, string is double quote
 
 ## map
 
@@ -98,8 +104,8 @@ for (auto i: v)
 Note :
 
 1. `sort` the vector because `unique` only remove duplicate elements if they're neighbors.
-2.  `unique`  only does half the job: move the unique elements to the front and return the pointer of the first redudant elements. 
-3.  `erase` the redundant elements.
+2. `unique`  only does half the job: move the unique elements to the front and return the pointer of the first redudant elements. 
+3. `erase` the redundant elements.
 
 `unique` is actually equivalent to the following codes:
 
@@ -115,5 +121,15 @@ return ++u;
 
 ```c++
 vector<vector<int> > ary(row_num, vector<int>(col_num, 0));
+```
+
+### count cpu time
+
+```c++
+#include <time.h>
+time_t timer0 = clock();
+cout<< Solution().combination(32,16) <<endl;
+double t = difftime(clock(),timer0);
+cout<<"time in micro seconds: "<< t <<endl;
 ```
 
