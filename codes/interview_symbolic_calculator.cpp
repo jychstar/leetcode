@@ -13,10 +13,10 @@ using namespace std;
 
 class Solution {
 public:
-    double calculate( string &s) {
+    float calculate( string &s) {
 
         // 1st step, parse input string
-        vector<double> nums;
+        vector<float> nums;
         vector<char> syms;
         string snum = "1234567890.", ss = "&|*+";
         string temp = "";
@@ -41,23 +41,25 @@ public:
             cout << "numbers and operators not matched!" << endl;
 
 
-        // 2nd step, calculate by the priority, so there will be 4 iterations.
+        // 2nd step, calculate by the priority, so there will be 3 iterations.
+        // note: '&' and '|' have equal priority
+        vector<string> priority = {"&|","*","+"};
 
-        for (char key: ss){
+        for (string pri : priority){
             int i = 0;
             int length = syms.size(); // this number will change after each calculation.
 
             while (i < length) {
-                if (syms[i] == key ) {
-                    switch (key){
+                if (pri.find(syms[i]) != string::npos) {
+                    switch (syms[i]){
                         case '&': nums[i] = max(nums[i], nums[i + 1]); break;
                         case '|': nums[i] = min(nums[i], nums[i + 1]); break;
                         case '*': nums[i] *= nums[i + 1]; break;
                         case '+': nums[i] += nums[i + 1]; break;
                     }
                     // handle processed element:
-                    nums.erase(nums.begin() + i + 1);
-                    syms.erase(syms.begin() + i);
+                    nums.erase(nums.begin() + i + 1); // erase next number
+                    syms.erase(syms.begin() + i); // erase current operator
                     length--;
                     continue;
                 }
@@ -71,13 +73,16 @@ public:
 
 
 int main() {
+    float res;
+    Solution so;
+
     string s = "1 & 2 | 3 * 4 * 5 + 6.0";
-    double res = Solution().calculate(s);
+    res = so.calculate(s);
     cout << res <<endl;  // 46
 
-    string s1 = "1 + 2 | 3 * 4 & 5.7 + 6.1";
-    res = Solution().calculate(s1);
-    cout << res << '\n'; //18.5
+    string s1 = "1|2.&3 * 4 & 5.7 + 6.1";
+    res = so.calculate(s1);
+    cout << res <<endl; //18.5
 
     return 0;
 }

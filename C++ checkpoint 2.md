@@ -1,20 +1,21 @@
 notes:
 
-- class member is private by default, struct member is public by default
-- all points should be initialized. Each pointer only takes 32 bit or 64 bit memory depending on the hardware/OS
+- By default, `class` member is private, but `struct` member is public.
+- all pointers should be initialized. **Each pointer only takes 32 bit or 64 bit** memory depending on the hardware/OS
 - object pointer must use arrow `->` to access the class method and member.
 
 ## vector vs array
 
 - it's recommend to use vector not array ( no matter c style or std::array) because array is error-prone.  
-- use `size()` to to get size of a std::vector or std:array object. For c style array, there are 2 ways:   `sizeof(list) / sizeof(list[0])` or distance(begin(list),end(list))
+- use `size()` to to get size of a std::vector or std:array object. For c style array, there are 2 ways:   `sizeof(list) / sizeof(list[0])` or `distance(begin(list),end(list))`
 - for std::vector, you can `push_back(value)` or `insert(iterator,value)` and  `erase(iterator)` 
-- constructor. `array<int,3> a={1,2,3};`
+- constructor. `array<int,3> a={1,2,3};` batch constructor is expected to come out in C++17.
 - constructor.  `vector<int> v(5,0)`;
 
 ## char vs string
 
 - char is single quote, string is double quote
+- char is primitive data type, string is something similar to `vector<char>`  but easier to handle, e.g. access substring by `s.substr(index, length)`
 
 ## map
 
@@ -51,14 +52,16 @@ There is a similar map called `unordered_map`, where the keys are randomly orgai
 ## auto and lambda
 
 ```c++
-auto a = 1+1;
+auto a = 1+1;  // automatically detect data type
 std::cout << "type of a: " << typeid(a).name() << '\n';
 
 auto my_lambda = [](int x) { return x + 3; };
 std::cout << "my_lambda: " << my_lambda(5) << '\n';
 ```
 
-## sort c style array and vector by iterator
+## sort 
+
+ sort c-style array and vector by **iterator**s, which means you always need 2 inputs.
 
 ```c++
 const int SIZE = 7;
@@ -85,7 +88,7 @@ cout << i <<j << before <<after;
 // get 1110
 ```
 
-So it is better to avoid use c++ because its value is not consistent with the assign variable and will lead to well-hidden errors. 
+there is no difference between stand-alone i++ and i++. But be cautious **when you assign it to another variable**.
 
 ## unique of vector
 
@@ -123,7 +126,7 @@ return ++u;
 vector<vector<int> > ary(row_num, vector<int>(col_num, 0));
 ```
 
-### count cpu time
+## count cpu time
 
 ```c++
 #include <time.h>
@@ -133,3 +136,4 @@ double t = difftime(clock(),timer0);
 cout<<"time in micro seconds: "<< t <<endl;
 ```
 
+alternatively, coderpad atermatically gives run time.
