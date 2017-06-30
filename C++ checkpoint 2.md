@@ -8,7 +8,7 @@ notes:
 
 - it's recommend to use vector not array ( no matter c style or std::array) because array is error-prone.  
 - use `size()` to to get size of a std::vector or std:array object. For c style array, there are 2 ways:   `sizeof(list) / sizeof(list[0])` or `distance(begin(list),end(list))`
-- for std::vector, you can `push_back(value)` or `insert(iterator,value)` and  `erase(iterator)` 
+- for std::vector, you can `push_back(value)` or `insert(iterator,value)` and  `erase(iterator1,iterator2)` or `erase(iterator position)`
 - constructor. `array<int,3> a={1,2,3};` batch constructor is expected to come out in C++17.
 - constructor.  `vector<int> v(5,0)`;
 
@@ -27,7 +27,7 @@ int main() {
     map<string, int> m;
     m["hello"] = 23;
     m["world!"] = 24;
-    m["fuck"] =25;
+    m["smile"] =25;
     // check if key is present
     if (m.find("world!") != m.end())
         std::cout << "map contains key world!\n";

@@ -1,10 +1,7 @@
 /*
-
 Given a grayscale image represented by an NxN matrix, write a method to rotate the image by a given degree theta.
-
 You can use nearest neighbor, linear interpolation etc. For more details about algorithms, please refer to
 https://www.mathworks.com/help/images/ref/imrotate.html
-
 */
 
 #include <iostream>
