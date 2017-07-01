@@ -49,6 +49,18 @@ int main() {
 
 There is a similar map called `unordered_map`, where the keys are randomly orgainized so the insertion is faster.
 
+erase key:
+
+```cpp
+  it=mymap.find('b');
+  mymap.erase (it);                   // erasing by iterator
+  mymap.erase ('c');                  // erasing by key
+  it=mymap.find ('e');
+  mymap.erase ( it, mymap.end() );    // erasing by range
+```
+
+
+
 ## auto and lambda
 
 ```c++
