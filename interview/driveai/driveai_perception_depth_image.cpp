@@ -65,8 +65,6 @@ vector<vector<int>> classify(size_t H, size_t W, size_t S, size_t D, vector<vect
                     //cout<<"range: "<< low <<"\t"<<high<<endl;
                 }
 
-
-
                 if (finalist.size()> S){
                     //cout << "final > S" <<endl;
                     ID +=1;
