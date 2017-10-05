@@ -95,8 +95,6 @@ Header file `#include "header.hpp" `
 
 detail explanation of [compilation](https://classroom.udacity.com/courses/ud999/lessons/6b9a7102-460d-4f9f-9fb7-668df8e19fea/concepts/a2e09c86-3058-464a-9509-b95fc25d1693)
 
-
-
 ## arithmetic
 
 ```c++
@@ -141,30 +139,14 @@ Cats::Cats(){
     breed = "Unknown"; //the initial value of the breed
     age = 99; //the initial value of the age
 }
-void Cats::setName(string nameIn){
-    name = nameIn;
-}
-
-void Cats::setBreed(string breedIn){
-    breed = breedIn;
-}
-
-void Cats::setAge(int ageIn){
-    age = ageIn;
-}
-string Cats::getName(){
-    return name;
-}
-string Cats::getBreed(){
-    return breed;
-}
-int Cats::getAge(){
-    return age;
-}
+void Cats::setName(string nameIn){name = nameIn;}
+void Cats::setBreed(string breedIn){breed =breedIn;}
+void Cats::setAge(int ageIn){age = ageIn;}
+string Cats::getName(){return name;}
+string Cats::getBreed(){return breed;}
+int Cats::getAge(){return age;}
 void Cats::printInfo(){
-    cout<<name<<" "<<breed<<" "<<age;
-}
-
+    cout<<name<<" "<<breed<<" "<<age;}
 //+++++++
 int main(){
     Cats cat1;

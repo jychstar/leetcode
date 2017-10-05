@@ -9,8 +9,9 @@ notes:
 - it's recommend to use vector not array ( no matter c style or std::array) because array is error-prone.  
 - use `size()` to to get size of a std::vector or std:array object. For c style array, there are 2 ways:   `sizeof(list) / sizeof(list[0])` or `distance(begin(list),end(list))`
 - for std::vector, you can `push_back(value)` or `insert(iterator,value)` and  `erase(iterator1,iterator2)` or `erase(iterator position)`
-- constructor. `array<int,3> a={1,2,3};` batch constructor is expected to come out in C++17.
-- constructor.  `vector<int> v(5,0)`;
+- array constructor:  `array<int,3> a={1,2,3};` batch constructor is expected to come out in C++17.
+- vector constructor:  `vector<int> v(5,0)`;
+- reset vector to 0: `fill(v.begin(), v.end(), 0);`
 
 ## char vs string
 
@@ -37,12 +38,7 @@ int main() {
             << ":"
             << i->second<<endl;
     }
-    // use foreach loop to loop through
-    for (auto &i :m){
-        cout<< i.first
-            << ":"
-            << i.second<<endl;
-    }
+
     return 0;
 }
 ```
@@ -61,7 +57,7 @@ erase key:
 
 
 
-## auto and lambda
+## typeid and lambda
 
 ```c++
 auto a = 1+1;  // automatically detect data type
@@ -135,7 +131,7 @@ return ++u;
 ## 2D vector
 
 ```c++
-vector<vector<int> > ary(row_num, vector<int>(col_num, 0));
+vector<vector<int> > v(row_num, vector<int>(col_num, 0));
 ```
 
 ## count cpu time
