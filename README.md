@@ -72,7 +72,7 @@ class Solution(object):
         return [-1, -1]
 ```
 
-c++ code (9s):
+c++ code (9 ms):
 
 ```c++
 #include <iostream>
