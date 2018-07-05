@@ -72,7 +72,7 @@ class Solution(object):
         return [-1, -1]
 ```
 
-c++ code (9 ms):
+c++ code (4 ms):
 
 ```c++
 #include <iostream>
@@ -83,17 +83,14 @@ class Solution {
 public:
     vector<int> twoSum(vector<int> &nums, int target) {
         map<int, int> m;
-        vector<int> res = {-1, -1};
         for (int i = 0; i < nums.size(); i++) {
-            int key = target - nums[i];
-            if (m.find(key) != m.end()) {
-                res = {m[key], i};
-                return res;
-            } else {
+            int key = target - nums[i]; //
+            if (m.find(key) != m.end())
+                return {m[key], i};
+            else
                 m[nums[i]] = i;
-            }
         }
-        return res;
+        return {-1,-1}; // in case none found
     }
 };
 ```
