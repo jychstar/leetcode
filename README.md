@@ -4,6 +4,8 @@ My LeetCode profile:  https://leetcode.com/jychstar/
 
 solutions: <http://bookshadow.com/leetcode/>
 
+https://www.geeksforgeeks.org/whats-new/
+
 warald’s suggestion: [**communication skill** and coding skill are both important](https://www.linkedin.com/pulse/leetcode%E5%88%B7%E9%A2%98%E4%BA%94%E9%81%8D%E8%BF%98%E6%B2%A1offer%E4%B8%BE%E4%BE%8B%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90%E4%B8%BA%E4%BB%80%E4%B9%88%E6%89%BE%E5%B7%A5%E4%BD%9C%E5%85%89%E5%88%B7%E9%A2%98%E6%B2%A1%E7%94%A8-xiaoning-warald)
 
 刷题指南: https://segmentfault.com/a/1190000006059081
